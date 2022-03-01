@@ -1,0 +1,107 @@
+<table mat-table [dataSource]="flights" matSort >
+  <!-- ID Flight Column -->
+  <ng-container matColumnDef="idFlight">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">No.</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.idFlight}}</td>
+  </ng-container>
+
+  <!--  Flight companyName -->
+  <ng-container matColumnDef="companyName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">companyName</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.companyName}}</td>
+  </ng-container>
+
+  <!--  Flight flightType -->
+  <ng-container matColumnDef="flightType">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">flightType</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.flightType}}</td>
+  </ng-container>
+
+  <!--  Flight flightType -->
+  <ng-container matColumnDef="travelType">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">travelType</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.travelType}}</td>
+  </ng-container>
+
+  <!--  Flight departureLocation -->
+  <ng-container matColumnDef="departureLocation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">departureLocation</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.departureLocation}}</td>
+  </ng-container>
+
+  <!--  Flight departureDate -->
+  <ng-container matColumnDef="departureDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">departureDate</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.departureDate | date:"MM/dd/yyyy"}}</td>
+  </ng-container>
+
+  <!-- travelType departureTime -->
+  <ng-container matColumnDef="departureTime">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">departureTime </th>
+    <td mat-cell *matCellDef="let flight"> {{flight.departureTime | date:"MM/dd/yyyy"}} </td>
+  </ng-container>
+
+  <!--  Flight arrivalLocation -->
+  <ng-container matColumnDef="arrivalLocation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">arrivalLocation</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.arrivalLocation}}</td>
+  </ng-container>
+
+  <!--  Flight arrivalDate -->
+  <ng-container matColumnDef="arrivalDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">arrivalDate</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.arrivalDate | date:"MM/dd/yyyy"}}</td>
+  </ng-container>
+
+  <!--  Flight arrivalTime -->
+  <ng-container matColumnDef="arrivalTime">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">arrivalTime</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.arrivalTime | date:"MM/dd/yyyy"}}</td>
+  </ng-container>
+
+  <!--  Flight backDate -->
+  <ng-container matColumnDef="backDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">backDate</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.backDate | date:"MM/dd/yyyy"}}</td>
+  </ng-container>
+
+  <!--  Flight backDate -->
+  <ng-container matColumnDef="backTime">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">backTime</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.backTime | date:"MM/dd/yyyy"}}</td>
+  </ng-container>
+
+
+  <!--  Flight flightDuration -->
+  <ng-container matColumnDef="flightDuration">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">flightDuration</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.flightDuration | date:"MM/dd/yyyy"}}</td>
+  </ng-container>
+
+
+  <!--  Flight connectionDuration -->
+  <ng-container matColumnDef="connectionDuration">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">connectionDuration</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.connectionDuration | date:"MM/dd/yyyy"}}</td>
+  </ng-container>
+
+
+  <!--  Flight aircraftType -->
+  <ng-container matColumnDef="aircraftType">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="">aircraftType</th>
+    <td mat-cell *matCellDef="let flight"> {{flight.aircraftType}}</td>
+  </ng-container>
+
+  <!--   select -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef >Select</th>
+    <td mat-cell *matCellDef="let flight">
+      <mat-checkbox></mat-checkbox>
+    </td>
+  </ng-container>
+
+  <!--  Flight  -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
