@@ -1,0 +1,25 @@
+<div id="mainContainer">
+  <app-left-side></app-left-side>
+  <div id="mainMargin">
+    <div id="main">
+
+      <div id="mainBanner">
+        <h3>Search flights</h3>
+        <p>
+          <span class="expand" (click)="hideSearchForm()">
+            <mat-icon *ngIf="isHiddenSearch">expand_more</mat-icon>
+            <mat-icon *ngIf="!isHiddenSearch">expand_less</mat-icon>
+          </span>
+        </p>
+      </div>
+
+      <div [ngStyle]="{'display':isHiddenSearch ? 'none':'inherit'}">
+        <app-search-form></app-search-form>
+      </div>
+
+<div>
+      <app-flight-list></app-flight-list>
+</div>
+    </div>
+  </div>
+</div>
