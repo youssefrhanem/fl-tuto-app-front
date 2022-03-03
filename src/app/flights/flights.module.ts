@@ -10,6 +10,7 @@ import { FlightsPageComponent } from './pages/flights/flights-page/flights-page.
 import {SharedModule} from "../shared/shared.module";
 import {PortalModule} from "../portal/portal.module";
 import {MatIconModule} from "@angular/material/icon";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 
@@ -27,7 +28,8 @@ import {MatIconModule} from "@angular/material/icon";
     MatPaginatorModule,
     SharedModule,
     PortalModule,
-    MatIconModule
+    MatIconModule,
+    TranslateModule
   ],
   exports: [
     FlightListComponent
