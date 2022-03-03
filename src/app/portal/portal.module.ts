@@ -2,19 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeftSideComponent } from '../left-side/left-side.component';
 import {MatIconModule} from "@angular/material/icon";
+import { BotSideComponent } from './bot-side/bot-side.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 
 
 @NgModule({
   declarations: [
-    LeftSideComponent
+    LeftSideComponent,
+    BotSideComponent
   ],
   exports: [
-    LeftSideComponent
+    LeftSideComponent,
+    BotSideComponent
   ],
   imports: [
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule
   ]
 })
 export class PortalModule { }

@@ -173,6 +173,10 @@ table {
   float: left;
 }
 
+.mat-paginator-outer-container{
+  float: left;
+}
+
 #flights .mat-cell:first-of-type, #flights .mat-header-cell:first-of-type {
   border-left: 1px solid #DADADA;
 }
