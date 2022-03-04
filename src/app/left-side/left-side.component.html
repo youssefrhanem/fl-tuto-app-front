@@ -1,52 +1,71 @@
-<div id="menu">
-  <ul class="menu">
-    <li>
-      <a>
-        <mat-icon class="leftIcon">home</mat-icon>
-        Home
-      </a>
-    </li>
+<div id="leftSide">
 
-    <li>
-      <a>
-        <mat-icon class="leftIcon">flight</mat-icon>
-        Flights
-      </a>
-    </li>
+  <div id="Lang" [formGroup]="language">
+    <mat-form-field>
+      <mat-label>Language</mat-label>
+      <mat-select (selectionChange)="changeLang($event.value)"
+                  formControlName="language">
+        <mat-option *ngFor="let lang of langs" [value]="lang">
+          {{(lang === "fr_FR") ? 'French' : 'English'}}
+        </mat-option>
+        <!--      <mat-option value="en_US">-->
+        <!--        en_US-->
+        <!--      </mat-option>-->
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-    <li>
-      <a>
-        <mat-icon class="leftIcon">Bookmarks</mat-icon>
-        bookmark
-      </a>
-    </li>
+  <div id="menu">
+    <ul class="menu">
+      <li>
+        <a>
+          <mat-icon class="leftIcon">home</mat-icon>
+          Home
+        </a>
+      </li>
 
-    <li>
-      <a>
-        <mat-icon class="leftIcon">Synthesis</mat-icon>
-        pie_chart
-      </a>
-    </li>
+      <li>
+        <a>
+          <mat-icon class="leftIcon">flight</mat-icon>
+          Flights
+        </a>
+      </li>
 
-    <li>
-      <a>
-        <mat-icon class="leftIcon">contacts</mat-icon>
-        Contact
-      </a>
-    </li>
+      <li>
+        <a>
+          <mat-icon class="leftIcon">Bookmarks</mat-icon>
+          bookmark
+        </a>
+      </li>
 
-    <li>
-      <a>
-        <mat-icon class="leftIcon">help</mat-icon>
-        Help
-      </a>
-    </li>
+      <li>
+        <a>
+          <mat-icon class="leftIcon">Synthesis</mat-icon>
+          pie_chart
+        </a>
+      </li>
 
-    <li>
-      <a>
-        <mat-icon class="leftIcon">power_settings_new</mat-icon>
-        sign out
-      </a>
-    </li>
-  </ul>
+      <li>
+        <a>
+          <mat-icon class="leftIcon">contacts</mat-icon>
+          Contact
+        </a>
+      </li>
+
+      <li>
+        <a>
+          <mat-icon class="leftIcon">help</mat-icon>
+          Help
+        </a>
+      </li>
+
+      <li>
+        <a>
+          <mat-icon class="leftIcon">power_settings_new</mat-icon>
+          sign out
+        </a>
+      </li>
+    </ul>
+  </div>
+
 </div>

@@ -11,6 +11,8 @@ export class AppComponent {
 
 
   constructor(private readonly translateService: TranslateService) {
-    this.translateService.use('fr_FR')
+    const locale = localStorage.getItem('language') || '';
+    this.translateService.use(locale);
+    //this.translateService.use('fr_FR');
   }
 }
