@@ -31,4 +31,5 @@ export class LeftSideComponent implements OnInit {
     localStorage.setItem('language', language)
     this.translateService.use(language);
   }
+
 }
