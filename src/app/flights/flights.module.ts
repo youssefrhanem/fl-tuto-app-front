@@ -11,6 +11,7 @@ import {SharedModule} from "../shared/shared.module";
 import {PortalModule} from "../portal/portal.module";
 import {MatIconModule} from "@angular/material/icon";
 import {TranslateModule} from "@ngx-translate/core";
+import {I18nDatePipe} from "../utli/pipes/i18n-date.pipe";
 
 
 
@@ -18,7 +19,8 @@ import {TranslateModule} from "@ngx-translate/core";
   declarations: [
     FlightsComponent,
     FlightListComponent,
-    FlightsPageComponent
+    FlightsPageComponent,
+    I18nDatePipe
   ],
   imports: [
     CommonModule,

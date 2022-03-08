@@ -3,6 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {Flight} from "../../../shared/models/flight.model";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
+import {FlightsService} from "../../services/flights.service";
 
 const ELEMENT_DATA: Flight[] = [
   {
@@ -135,15 +136,20 @@ export class FlightListComponent implements OnInit {
     'aircraftType',
     'select'
     ];
-  flights = new MatTableDataSource<Flight>(ELEMENT_DATA);
+  // flights = new MatTableDataSource<Flight>(ELEMENT_DATA);
+  flights = new MatTableDataSource<Flight>();
 
-  constructor() { }
+  constructor(private readonly flightService: FlightsService) { }
 
   ngOnInit(): void {
     // @ts-ignore
     this.flights.paginator = this.paginator;
     // @ts-ignore
     this.flights.sort = this.matSort;
+
+    this.flightService.getFlightList().subscribe(flightsList => {
+      this.flights.data = flightsList;
+    })
   }
 
 }
