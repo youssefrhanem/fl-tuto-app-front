@@ -9,7 +9,11 @@ import {SharedService} from "../../services/shared.service";
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  //
+
+  companies: string[]  = [];
+  trips: string[] = [];
+  flightTypes: string[] = [];
+
   showConnection = true;
   showBack = true;
 
@@ -41,6 +45,12 @@ export class SearchFormComponent implements OnInit {
   ngOnInit(): void {
     this.sharedService.createSearchCriteresForm();
     this.searchFlightForm = this.sharedService.searchCriteresForm;
+
+    this.sharedService.initDropDownLists();
+    this.companies = this.sharedService.companies;
+    this.trips =this.sharedService.trips;
+    this.flightTypes = this.sharedService.flightTypes;
+
   }
 
   restForm(form: FormGroup) {

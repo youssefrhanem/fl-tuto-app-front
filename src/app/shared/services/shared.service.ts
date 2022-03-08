@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {CompanyName} from "../../utli/enums/company-name";
+import {TargetVersion} from "@angular/cdk/schematics";
+import {TravelType} from "../../utli/enums/travel-type";
+import {FlightType} from "../../utli/enums/flight-type";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
+  companies  : string[] = [];
+  trips  : string[] = [];
+  flightTypes  : string[] = [];
 
   private _searchCriteresForm: FormGroup | undefined;
 
@@ -45,6 +52,17 @@ export class SharedService {
       fareMin: new FormControl(''),
       fareMax: new FormControl('')
     });
+  }
+
+  initDropDownLists() {
+    const companyKeys = Object.keys(CompanyName);
+    this.companies = companyKeys.slice(companyKeys.length / 2);
+
+    const tripKeys = Object.keys(TravelType);
+    this.trips = tripKeys.slice(tripKeys.length / 2);
+
+    const flightTypesKeys = Object.keys(FlightType);
+    this.flightTypes = flightTypesKeys.slice(flightTypesKeys.length / 2);
   }
 
 }

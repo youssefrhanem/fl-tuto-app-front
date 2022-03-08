@@ -14,20 +14,23 @@
 
     <!--  Flight companyName -->
     <ng-container matColumnDef="companyName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>companyName</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.companyName}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Company</th>
+<!--      <td mat-cell *matCellDef="let flight"> {{flight.companyName}}</td>-->
+      <td mat-cell *matCellDef="let flight"> {{"searchFlightForm.company."+flight.companyName | translate}}</td>
     </ng-container>
 
     <!--  Flight flightType -->
     <ng-container matColumnDef="flightType">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>flightType</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.flightType}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>flight Type</th>
+<!--      <td mat-cell *matCellDef="let flight"> {{flight.flightType}}</td>-->
+      <td mat-cell *matCellDef="let flight"> {{"searchFlightForm.flightType."+flight.flightType | translate}}</td>
     </ng-container>
 
     <!--  Flight flightType -->
     <ng-container matColumnDef="travelType">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>travelType</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.travelType}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>travel Type</th>
+<!--      <td mat-cell *matCellDef="let flight"> {{flight.travelType}}</td>-->
+      <td mat-cell *matCellDef="let flight"> {{"searchFlightForm.trip."+flight.travelType | translate}}</td>
     </ng-container>
 
     <!--  Flight departureLocation -->
