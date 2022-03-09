@@ -1,9 +1,13 @@
+import {CompanyName} from "../../utli/enums/company-name";
+import {FlightType} from "../../utli/enums/flight-type";
+import {TravelType} from "../../utli/enums/travel-type";
+
 export class Flight {
 
   idFlight?: number;
-  companyName?: string | '';
-  flightType?: string | '';
-  travelType?: string | '';
+  companyName?: CompanyName | '';
+  flightType?: FlightType | '';
+  travelType?: TravelType | '';
   departureDate?: Date | null;
   departureTime?: Date | null;
   arrivalDate?: Date | null;

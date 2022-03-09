@@ -6,8 +6,9 @@
         <mat-label> Company</mat-label>
         <mat-select formControlName="company" (selectionChange)="selectedCompanyName($event.value)">
           <mat-option></mat-option>
-          <mat-option value="Air France">Air France</mat-option>
-          <mat-option value="Emirates">Emirates</mat-option>
+          <mat-option *ngFor="let company of companies" [value]="company">
+            {{ "searchFlightForm.company."+company | translate }}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -18,8 +19,9 @@
           <mat-label> Trip</mat-label>
           <mat-select formControlName="travelType" (selectionChange)="selectedTripType($event.value)">
             <mat-option></mat-option>
-            <mat-option value="One-way ticket">One-way ticket</mat-option>
-            <mat-option value="Round trip">Round trip</mat-option>
+            <mat-option *ngFor="let trip of trips" [value]="trip">
+              {{ "searchFlightForm.trip."+trip | translate }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
 
@@ -27,8 +29,9 @@
           <mat-label>Flight Type</mat-label>
           <mat-select formControlName="flightType" (selectionChange)="selectedFlightType($event.value)">
             <mat-option></mat-option>
-            <mat-option value="Direct flight">Direct flight</mat-option>
-            <mat-option value="connecting flight">connecting flight</mat-option>
+            <mat-option *ngFor="let flightType of flightTypes" [value]="flightType">
+              {{ "searchFlightForm.flightType."+flightType | translate }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </div>

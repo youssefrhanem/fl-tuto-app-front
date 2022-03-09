@@ -14,20 +14,23 @@
 
     <!--  Flight companyName -->
     <ng-container matColumnDef="companyName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>companyName</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.companyName}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Company</th>
+<!--      <td mat-cell *matCellDef="let flight"> {{flight.companyName}}</td>-->
+      <td mat-cell *matCellDef="let flight"> {{"searchFlightForm.company."+flight.companyName | translate}}</td>
     </ng-container>
 
     <!--  Flight flightType -->
     <ng-container matColumnDef="flightType">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>flightType</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.flightType}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>flight Type</th>
+<!--      <td mat-cell *matCellDef="let flight"> {{flight.flightType}}</td>-->
+      <td mat-cell *matCellDef="let flight"> {{"searchFlightForm.flightType."+flight.flightType | translate}}</td>
     </ng-container>
 
     <!--  Flight flightType -->
     <ng-container matColumnDef="travelType">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>travelType</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.travelType}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>travel Type</th>
+<!--      <td mat-cell *matCellDef="let flight"> {{flight.travelType}}</td>-->
+      <td mat-cell *matCellDef="let flight"> {{"searchFlightForm.trip."+flight.travelType | translate}}</td>
     </ng-container>
 
     <!--  Flight departureLocation -->
@@ -39,13 +42,13 @@
     <!--  Flight departureDate -->
     <ng-container matColumnDef="departureDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>departureDate</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.departureDate | date:"MM/dd/yyyy"}}</td>
+      <td mat-cell *matCellDef="let flight"> {{flight.departureDate | i18nDate }}</td>
     </ng-container>
 
     <!-- travelType departureTime -->
     <ng-container matColumnDef="departureTime">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>departureTime</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.departureTime | date:"MM/dd/yyyy"}} </td>
+      <td mat-cell *matCellDef="let flight"> {{flight.departureTime | i18nDate}} </td>
     </ng-container>
 
     <!--  Flight arrivalLocation -->
@@ -57,39 +60,39 @@
     <!--  Flight arrivalDate -->
     <ng-container matColumnDef="arrivalDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>arrivalDate</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.arrivalDate | date:"MM/dd/yyyy"}}</td>
+      <td mat-cell *matCellDef="let flight"> {{flight.arrivalDate | i18nDate}}</td>
     </ng-container>
 
     <!--  Flight arrivalTime -->
     <ng-container matColumnDef="arrivalTime">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>arrivalTime</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.arrivalTime | date:"MM/dd/yyyy"}}</td>
+      <td mat-cell *matCellDef="let flight"> {{flight.arrivalTime | i18nDate}}</td>
     </ng-container>
 
     <!--  Flight backDate -->
     <ng-container matColumnDef="backDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>backDate</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.backDate | date:"MM/dd/yyyy"}}</td>
+      <td mat-cell *matCellDef="let flight"> {{flight.backDate | i18nDate}}</td>
     </ng-container>
 
     <!--  Flight backDate -->
     <ng-container matColumnDef="backTime">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>backTime</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.backTime | date:"MM/dd/yyyy"}}</td>
+      <td mat-cell *matCellDef="let flight"> {{flight.backTime | i18nDate}}</td>
     </ng-container>
 
 
     <!--  Flight flightDuration -->
     <ng-container matColumnDef="flightDuration">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>flightDuration</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.flightDuration | date:"MM/dd/yyyy"}}</td>
+      <td mat-cell *matCellDef="let flight"> {{flight.flightDuration | i18nDate}}</td>
     </ng-container>
 
 
     <!--  Flight connectionDuration -->
     <ng-container matColumnDef="connectionDuration">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>connectionDuration</th>
-      <td mat-cell *matCellDef="let flight"> {{flight.connectionDuration | date:"MM/dd/yyyy"}}</td>
+      <td mat-cell *matCellDef="let flight"> {{flight.connectionDuration | i18nDate}}</td>
     </ng-container>
 
 
